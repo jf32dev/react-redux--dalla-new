@@ -1,0 +1,267 @@
+@use "../../../style/variables" as *;
+@use '../../../style/mixins' as *;
+
+.story-wrapper {
+  border-radius: rem(8px);
+  box-shadow: 0 0 0 rem(2px) rgba(34, 34, 34, 0.15);
+  height: rem(362px);
+  margin-right: rem(16px);
+
+  @include media('<=xl', 'landscape') {
+    height: rem(360px);
+  }
+
+  @include media('<=1328px') {
+    height: rem(353px);
+  }
+
+  @include media('<=lg', 'portrait') {
+    height: rem(386px);
+  }
+  @include media('<=md', 'portrait') {
+    height: rem(348px);
+  }
+  @include media('<=sm', 'portrait') {
+    height: rem(397px);
+    margin-right: rem(8px);
+  }
+  @include media('<=xs', 'portrait') {
+    height: rem(318px);
+    margin-right: rem(8px);
+  }
+
+  &:first-child {
+    margin-left: rem(1px);
+    margin-top: rem(1px);
+  }
+
+  .image-wrapper {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: rem(8px) rem(8px) 0 0;
+    height: rem(238px);
+
+    @include media('<=xl', 'landscape') {
+      height: rem(235px);
+    }
+    @include media('<=1328px') {
+      height: rem(228px);
+    }
+
+    @include media('<=lg', 'portrait') {
+      height: rem(261px);
+    }
+    @include media('<=md', 'portrait') {
+      height: rem(224px);
+    }
+    @include media('<=sm', 'portrait') {
+      height: rem(273px);
+    }
+    @include media('<=xs', 'portrait') {
+      height: rem(193px);
+    }
+    > img {
+      height: 100%;
+    }
+  }
+
+  .content-wrapper {
+    border-radius: 0 0 rem(8px) rem(8px);
+    height: calc(100% - 238px);
+
+    @include media('<=xl', 'landscape') {
+      height: calc(100% - 235px);
+    }
+    @include media('<=1328px') {
+      height: calc(100% - 228px);
+    }
+    @include media('<=lg', 'portrait') {
+      height: calc(100% - 261px);
+    }
+    @include media('<=md', 'portrait') {
+      height: calc(100% - 224px);
+    }
+    @include media('<=sm', 'portrait') {
+      height: calc(100% - 273px);
+    }
+    @include media('<=xs', 'portrait') {
+      height: calc(100% - 193px);
+    }
+
+    .icon-wrapper {
+      border-top: 1px solid rgb(234, 234, 234);
+      color: $light-grey-10;
+      display: flex;
+      font-size: rem(12px);
+      font-style: normal;
+      height: rem(43.5px);
+      justify-content: space-between;
+      line-height: rem(16px);
+      @include media('<=xl') {
+        font-size: rem(13px);
+      }
+      @include media('<=xs') {
+        line-height: rem(18px);
+      }
+
+      .file-wrapper {
+        align-items: center;
+        display: flex;
+        padding: 0 rem(16px);
+      }
+      .like-wrapper {
+        display: flex;
+        padding: 0 rem(20px);
+        > div {
+          align-items: center;
+          display: flex;
+          margin-left: rem(13px);
+        }
+      }
+      span {
+        margin-left: rem(6px);
+      }
+    }
+
+    .heading-wrapper {
+      height: rem(79.5px);
+      padding: 0 rem(16px);
+
+      @include media('<=xl') {
+        height: rem(80.5px);
+      }
+      @include media('<=md', 'portrait') {
+        height: rem(79.5px);
+      }
+
+      @include media('<=sm', 'portrait') {
+        height: rem(79.5px);
+      }
+      @include media('<=xs', 'portrait') {
+        height: rem(80.5px);
+      }
+      .date {
+        color: $light-grey-10;
+        font-size: rem(12px);
+        font-style: normal;
+        line-height: rem(16px);
+        padding-top: rem(17px);
+
+        @include media('<=xl', 'landscape') {
+          font-size: rem(13px);
+          line-height: rem(18px);
+        }
+
+        @include media('<=lg', 'portrait') {
+          font-size: rem(13px);
+          line-height: rem(18px);
+        }
+        @include media('<=md', 'portrait') {
+          font-size: rem(12px);
+          line-height: rem(16px);
+        }
+        @include media('<=xs', 'portrait') {
+          font-size: rem(13px);
+          line-height: rem(18px);
+        }
+
+        > span {
+          color: $light-grey-20;
+          font-weight: 600;
+          margin-right: rem(8px);
+        }
+      }
+      > h3 {
+        color: $brand-black-text;
+        font-size: rem(18px);
+        font-style: normal;
+
+        line-height: rem(25px);
+        margin: rem(5px) 0 rem(16.5px) 0;
+        @include clamp(1);
+
+        @include media('<=xl', 'landscape') {
+          font-size: rem(20px);
+          line-height: rem(24px);
+          margin: rem(5px) 0;
+        }
+
+        @include media('<=lg', 'portrait') {
+          font-size: rem(20px);
+          line-height: rem(24px);
+        }
+        @include media('<=md', 'portrait') {
+          font-size: rem(18px);
+          line-height: rem(25px);
+        }
+        @include media('<=sm', 'portrait') {
+          margin: rem(5px) 0 rem(16px) 0;
+        }
+        @include media('<=xs', 'portrait') {
+          font-size: rem(20px);
+          line-height: rem(24px);
+        }
+      }
+    }
+  }
+}
+
+.story-wrapper-default {
+  &:hover {
+    @include hoverState;
+  }
+  .content-wrapper {
+    .heading-wrapper {
+      .date {
+        font-family: $font-openSans-regular;
+      }
+      > h3 {
+        font-family: $font-openSans-bold;
+      }
+      .icon-wrapper {
+        font-family: $font-openSans-regular;
+      }
+    }
+  }
+}
+
+.story-wrapper-ios {
+  &:hover {
+    @include hoverState;
+  }
+  .content-wrapper {
+    .heading-wrapper {
+      .date {
+        font-family: $font-sf-pro-text-regular;
+      }
+      > h3 {
+        font-family: $font-sf-pro-text-semibold;
+      }
+      .icon-wrapper {
+        font-family: $font-sf-pro-text-regular;
+      }
+    }
+  }
+}
+.story-wrapper-windows {
+  &:hover {
+    @include hoverState;
+  }
+  .content-wrapper {
+    .heading-wrapper {
+      .date {
+        font-family: $font-Segoe-regular;
+        font-weight: normal;
+      }
+      > h3 {
+        font-family: $font-Segoe-bold;
+        font-weight: 600;
+      }
+      .icon-wrapper {
+        font-family: $font-Segoe-regular;
+        font-weight: normal;
+      }
+    }
+  }
+}

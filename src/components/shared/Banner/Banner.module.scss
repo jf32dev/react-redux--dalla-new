@@ -1,0 +1,127 @@
+@use '../../../style/variables' as *;
+@use '../../../style/mixins' as *;
+
+.banner {
+  background-image: url('../../../assets/images/banner.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: rem(475px);
+  justify-content: space-between;
+
+  @include media('<=xl') {
+    height: rem(483px);
+  }
+  @include media('<=1328px') {
+    height: rem(529px);
+  }
+  @include media('<=lg') {
+    background-image: url('../../../assets/images/banner-portrait.jpg');
+    height: rem(747px);
+  }
+  @include media('<=md') {
+    height: rem(680px);
+  }
+  @include media('<=sm') {
+    background-image: url('../../../assets/images/banner-mobile.jpg');
+    height: rem(854px);
+  }
+  @include media('<=xs') {
+    background-image: url('../../../assets/images/iphone-banner.jpg');
+    height: rem(847px);
+  }
+
+  &-info {
+    align-items: center;
+    display: flex;
+    height: 50%;
+    justify-content: center;
+
+    @include media('<=lg') {
+      height: 35%;
+    }
+    @include media('<=md') {
+      height: 30%;
+    }
+    @include media('<=sm') {
+      height: 25%;
+    }
+
+    &-content {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0;
+      .logo {
+        width: rem(300px);
+      }
+      .button {
+        background: $brand-red;
+        border: unset;
+        border-radius: rem(8px);
+        cursor: pointer;
+        height: rem(40px);
+        margin-top: rem(40px);
+        outline: none;
+        width: rem(102px);
+        & :hover {
+          @include hoverState;
+        }
+        & p {
+          color: $brand-white;
+          font-family: $font-openSans-regular;
+          font-size: rem(16px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: rem(22px);
+          margin: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &-actionbar {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 rem(31px) rem(32px) rem(31px);
+
+    @include media('<=lg') {
+      margin-bottom: rem(16px);
+    }
+    @include media('<=md') {
+      margin-bottom: rem(24px);
+    }
+    @include media('<sm') {
+      margin: 0 rem(12px) rem(8px) rem(12px);
+    }
+
+    .action-item {
+      flex: 1;
+
+      @include media('<=lg') {
+        flex: 1 1 calc(33.33% - 31px);
+      }
+      @include media('<=sm') {
+        flex: 1 1 calc(50% - 16px);
+      }
+    }
+  }
+}
+
+.banner-ios {
+  .button {
+    > p {
+      font-family: $font-sf-pro-text-regular;
+    }
+  }
+}
+.banner-windows {
+  .button {
+    > p {
+      font-family: $font-Segoe-regular;
+    }
+  }
+}

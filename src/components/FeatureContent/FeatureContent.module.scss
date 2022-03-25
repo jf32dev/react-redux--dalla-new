@@ -1,0 +1,75 @@
+@use "../../style/variables" as *;
+@use '../../style/mixins' as *;
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  margin-left: rem(40px);
+  position: relative;
+
+  @include media('<sm') {
+    margin-left: rem(16px);
+  }
+
+  > h2 {
+    align-items: center;
+    color: $dark-grey;
+    display: flex;
+    font-family: $font-openSans-regular;
+    font-size: rem(22px);
+    font-weight: bold;
+    line-height: rem(30px);
+    margin: unset;
+    margin: rem(29px) 0 rem(16px) 0;
+
+    @include media('<=xl') {
+      margin-top: rem(40px);
+    }
+    @include media('<=1328px') {
+      margin-top: rem(33px);
+    }
+    @include media('<=lg') {
+      line-height: rem(28px);
+      margin-top: rem(68px);
+    }
+    @include media('<=md') {
+      margin-top: rem(37px);
+    }
+    @include media('<=xs') {
+      margin-top: rem(41px);
+    }
+  }
+  .featured-wrapper {
+    display: flex;
+    height: rem(390px);
+
+    @include media('<=xl') {
+      height: auto;
+    }
+    @include media('<=md') {
+      height: rem(373px);
+    }
+    @include media('<=sm') {
+      height: rem(423px);
+    }
+    @include media('<=xs') {
+      height: auto;
+    }
+
+    .loader {
+      width: 100%;
+    }
+  }
+}
+
+.feature-ios {
+  > h2 {
+    font-family: $font-sf-pro-text-regular;
+  }
+}
+
+.feature-windows {
+  > h2 {
+    font-family: $font-Segoe-regular;
+  }
+}

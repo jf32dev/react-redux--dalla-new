@@ -1,0 +1,104 @@
+@use "../../../style/variables" as *;
+@use '../../../style/mixins' as *;
+
+.card {
+  background-color: $brand-white;
+  border-radius: rem(8px);
+  display: flex;
+  flex-direction: column;
+  height: rem(169px);
+  margin: 0 rem(8px);
+
+  @include media('<=lg') {
+    height: rem(204px);
+    margin-bottom: rem(16px);
+  }
+  @include media('<=md') {
+    height: rem(174px);
+  }
+  @include media('<=sm') {
+    margin: 0 rem(4px) rem(8px) rem(4px);
+  }
+  @include media('<=xs') {
+    height: rem(146px);
+  }
+
+  &:hover {
+    box-shadow: rem(4px) rem(10px) rem(16px) rgba(34, 34, 34, 0.12);
+    @include hoverState;
+  }
+
+  .figure {
+    align-items: center;
+    border-bottom: 1px solid rgba($brand-black, 0.1);
+    display: flex;
+    flex: 1;
+    height: rem(115px);
+    justify-content: center;
+
+    @include media('<=lg') {
+      height: rem(150px);
+    }
+    @include media('<=md') {
+      height: rem(120px);
+    }
+    @include media('<=xs') {
+      height: rem(96px);
+    }
+
+    img {
+      height: rem(40px);
+      object-fit: contain;
+      width: rem(40px);
+      @include media('<=lg') {
+        height: rem(50px);
+        width: rem(50px);
+      }
+      @include media('<=md') {
+        height: rem(40px);
+        width: rem(40px);
+      }
+    }
+  }
+  .description {
+    display: flex;
+    font-family: $font-openSans-regular;
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 600;
+    height: rem(54px);
+    justify-content: center;
+    line-height: rem(22px);
+    padding: rem(16px) rem(5px);
+    text-align: center;
+    @include media('<=xl') {
+      font-size: rem(10px);
+      line-height: rem(15px);
+    }
+    @include media('<=lg') {
+      font-size: rem(17px);
+      line-height: rem(22px);
+    }
+    @include media('<=md') {
+      font-size: rem(16px);
+      line-height: rem(16px);
+    }
+    @include media('<=xs') {
+      font-size: rem(13px);
+      height: rem(50px);
+      line-height: rem(16px);
+    }
+  }
+}
+
+.card-ios {
+  .description {
+    font-family: $font-sf-pro-text-regular;
+  }
+}
+
+.card-windows {
+  .description {
+    font-family: $font-Segoe-regular;
+  }
+}

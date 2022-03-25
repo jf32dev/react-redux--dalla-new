@@ -1,0 +1,117 @@
+@use '../../../style/variables' as *;
+@use '../../../style/mixins' as *;
+
+.navbar {
+  align-items: center;
+  background-color: $dark-white;
+  display: flex;
+  height: rem(100px);
+  justify-content: space-between;
+  padding: 0 rem(40px);
+  @include media('<=xs') {
+    padding: rem(24px);
+  }
+  &-welcome {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    .left {
+      align-items: center;
+      display: flex;
+      figure {
+        margin: 0 0;
+        img {
+          border-radius: 50%;
+          height: rem(68px);
+          object-fit: cover;
+          object-position: center center;
+          width: rem(68px);
+        }
+      }
+      .userplaceholder {
+        align-items: center;
+        background-color: $dark-background;
+        border-radius: 50%;
+        color: $brand-white;
+        display: flex;
+        font-size: rem(30px);
+        height: rem(68px);
+        justify-content: center;
+        text-transform: uppercase;
+        width: rem(68px);
+      }
+    }
+    &-text {
+      color: $dark-black;
+      font-family: $font-openSans-regular;
+      font-size: rem(22px);
+      font-weight: bold;
+      line-height: rem(30px);
+      margin-left: rem(24px);
+
+      @include media('<=sm', 'portrait') {
+        font-size: rem(19px);
+      }
+    }
+    p {
+      color: $dark-grey;
+      font-family: $font-openSans-regular;
+      font-size: rem(14px);
+      font-weight: normal;
+      line-height: rem(22px);
+      margin: 0;
+
+      @include media('<=sm', 'portrait') {
+        font-size: rem(12px);
+      }
+    }
+  }
+  .icon {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .logo {
+      height: 100%;
+      width: 100%;
+    }
+    p {
+      color: $dark-black;
+      font-family: $font-openSans-regular;
+      font-size: rem(11px);
+      font-weight: 600;
+      line-height: rem(16px);
+      margin: 0;
+    }
+  }
+}
+
+.navbar-ios {
+  .navbar-welcome-text {
+    font-family: $font-sf-pro-text-regular;
+    & p {
+      font-family: $font-sf-pro-text-regular;
+    }
+  }
+  .icon {
+    & p {
+      font-family: $font-Segoe-regular;
+    }
+  }
+}
+
+.navbar-windows {
+  .navbar-welcome-text {
+    font-family: $font-Segoe-regular;
+    & p {
+      font-family: $font-Segoe-regular;
+    }
+  }
+  .icon {
+    & p {
+      font-family: $font-Segoe-regular;
+    }
+  }
+}

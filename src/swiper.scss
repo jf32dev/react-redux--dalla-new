@@ -1,0 +1,87 @@
+@import '~react-id-swiper/lib/styles/scss/swiper.scss';
+@import './style/mixins.scss';
+@import './style/variables.scss';
+
+.swiper-wrapper {
+  padding-bottom: rem(16px);
+}
+.swiper-pagination-bullet {
+  background-color: $light-grey;
+  height: rem(10px);
+  opacity: 1;
+  width: rem(10px);
+}
+
+.swiper-pagination-bullets {
+  bottom: 0 !important;
+  position: absolute;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $brand-orange;
+}
+
+.swiper-container {
+  height: 100%;
+  transition: transform 500ms ease 0s;
+  width: 100%;
+  .swiper-button-next {
+    background-color: rgba(114, 114, 114, 0.6);
+    background-image: url('../src/assets/images/Right.png') !important;
+    background-size: rem(10px) rem(18px) !important;
+    border-radius: rem(8px) 0 0 rem(8px);
+    color: $brand-white;
+    height: 80%;
+    opacity: 0;
+    padding: rem(15px) rem(20px);
+    right: 0;
+    top: rem(45px);
+    transition: 0.3s;
+    width: rem(60px);
+    &:hover {
+      background-color: rgba(72, 71, 71, 0.6);
+    }
+  }
+
+  .swiper-button-prev {
+    background-color: rgba(114, 114, 114, 0.6);
+    background-image: url('../src/assets/images/Left.png') !important;
+    background-size: rem(10px) rem(18px) !important;
+    border-radius: 0 rem(8px) rem(8px) 0;
+    color: $brand-white;
+    height: 80%;
+
+    left: 0;
+    opacity: 0;
+    padding: rem(15px) rem(20px);
+    top: rem(45px);
+    transition: 0.3s;
+    width: rem(60px);
+    &:hover {
+      background-color: rgba(72, 71, 71, 0.6);
+    }
+  }
+  .swiper-button-prev.swiper-button-disabled {
+    display: none;
+  }
+  .swiper-button-next.swiper-button-disabled {
+    display: none;
+  }
+
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: rem(30px);
+  }
+  &:hover {
+    .swiper-button-next {
+      opacity: 1;
+    }
+    .swiper-button-prev {
+      opacity: 1;
+    }
+  }
+}
+
+.swiper-slide {
+  touch-action: pan-y !important;
+}

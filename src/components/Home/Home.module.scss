@@ -1,0 +1,13 @@
+@use "../../style/variables" as *;
+@use '../../style/mixins' as *;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+
+  .bottom {
+    margin-bottom: rem(20px);
+  }
+}

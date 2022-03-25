@@ -1,0 +1,28 @@
+@use '../../../style/variables' as v;
+@use '../../../style/mixins' as m;
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0px 2px 16px rgba(34, 34, 34, 0.12);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: m.rem(240px);
+  min-width: m.rem(150px);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  width: m.rem(200px);
+
+  &:hover {
+    @media (hover: hover) {
+      box-shadow: 0px 2px 16px rgba(34, 34, 34, 0.32);
+    }
+  }
+  > * {
+    &:not(:only-child) {
+      &:first-child {
+        border-bottom: 1px solid rgba(v.$brand-black, 0.2);
+      }
+    }
+  }
+}
